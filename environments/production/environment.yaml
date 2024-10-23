@@ -1,16 +1,16 @@
 #
-# Configuration for production environment
-#
+# Configuration for staging environment
+# changes
 version: 1.0
 app:
   # build id to deploy. if 'version' is commented out, the application is not deployed
-  version: ""
-
+  version: "86b38f18-31a1-441f-9c7e-a7672a58bc7f"
+ 
   # MQ service
   services:
     - type: mqcloud
       name: MQ-c3-mei-dev
-      
+ 
   # number of instances
   instances:
     # min number of instances. can be 0 for scale to 0. default to 1.
@@ -27,9 +27,10 @@ app:
   env:
     - name: JVM_ARGS 
       value: "-Xms=1024m"
+    
 
   # List of variables that can be referenced in the server.xml
-  variables: 
+  variables:
     - name: mqManagerName
       value: "meiQueMgr"
     - name: mqHostName  
